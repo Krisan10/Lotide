@@ -5,4 +5,4 @@ const assertEqual = function(actual, expected) {
   }
 };
 assertEqual(3, 1);
-assertEqual(2, 2);
+assertEqual(2, 2); 
