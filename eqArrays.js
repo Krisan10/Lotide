@@ -20,7 +20,7 @@ const eqArrays = function(actual, expected) {
   return true;
 };
 
-assertEqual(eqArrays([1, 2, 3], [1, 2, 3])); // Assertion Passed
-assertEqual(eqArrays([1, 2, 3], [3, 2, 1])); // Assertion Failed
-assertEqual(eqArrays(["1", "2", "3"], ["1", "2", "3"])); // Assertion Passed
-assertEqual(eqArrays(["1", "2", "3"], ["1", "2", 3])); // Assertion Failed
+assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true);
+assertEqual(eqArrays(["cat", "dog", "frog"], ["cat", "dog", "eagle" ]), false); 
+assertEqual(eqArrays(["yeah"], []), false); 
+assertEqual(eqArrays([], [],), true); 
