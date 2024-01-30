@@ -29,9 +29,6 @@ const without = function(array, itemsToRemove) {
 
   return newArray;
 };
-
-const words = ["hello", "world", "lighthouse"];
-without(words, ["lighthouse"]);
-console.log(without(words, ["lighthouse"]));
-console.log(without([1, 2, 3], [1]));
-assertArraysEqual(words, ["hello", "world", "lighthouse",]);
+words = ["hello", "world", "lighthouse"]
+assertArraysEqual(without(words, ["lighthouse"]), ["hello", "world"]);
+assertArraysEqual(without([1, 2, 3], [1]), [2, 3]);
