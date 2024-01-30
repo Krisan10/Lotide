@@ -24,7 +24,7 @@ const flatten = function(array) {
 
   for (let i = 0; i < array.length; i++) {
     if (Array.isArray(array[i])) {
-      flattenedArray = flattenedArray.concat(flatten(array[i]));
+      flattenedArray = flattenedArray.concat(array[i]);
     } else {
       flattenedArray.push(array[i]);
     }
@@ -33,8 +33,6 @@ const flatten = function(array) {
   return flattenedArray;
 };
 
-var nestedArray = [1, [2, 3], [4, [5, 6]]];
-let flattenedArray = flatten(nestedArray);
-console.log(flattenedArray); 
-let johtoLegendaries = ["Ho-oh", "Lugia", ["Entei", "Raikou", "Suicune"], "Celebi"]
-assertArraysEqual(flatten(johtoLegendaries), ["Ho-oh", "Lugia", "Entei", "Raikou", "Suicune", "Celebi"])
+let johtoLegendaries = ["Ho-oh", "Lugia", ["Entei", "Raikou", ["Suicune"]], "Celebi"]
+console.log(flatten(johtoLegendaries));
+assertArraysEqual(flatten(johtoLegendaries), ["Ho-oh", "Lugia", "Entei", "Raikou", ["Suicune"], "Celebi"])
