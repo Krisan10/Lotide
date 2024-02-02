@@ -1,3 +1,5 @@
+// This function will take the middle of an array. If the array is 2 or less, the array is empty. If the array has an odd amount of valyes, the array will have the middle value. If the array has an even amount of values, it'll take the two middle values.
+
 const eqArrays = function(actual, expected) {
   if (actual.length !== expected.length) {
     return false;
@@ -19,7 +21,7 @@ const assertArraysEqual = function(actual, expected) {
   }
 };
 
-const middle = function(array) { 
+const middle = function(array) {
   if ((array.length === 1) || (array.length === 2)) {
     return [];
   } else if (array.length % 2 === 0) {
@@ -28,15 +30,15 @@ const middle = function(array) {
   } else {
     let oddMiddle = Math.floor(array.length / 2);
     return [array[oddMiddle]];
-}
-}
+  }
+};
 
-let array1 = [3, 5, 7, 9, 11]
-let array2 = [3]
-let array3 = [2, 4, 6, 8]
-console.log(middle(array1))
-console.log(middle(array2))
-console.log(middle(array3))
+let array1 = [3, 5, 7, 9, 11];
+let array2 = [3];
+let array3 = [2, 4, 6, 8];
+console.log(middle(array1));
+console.log(middle(array2));
+console.log(middle(array3));
 
 let check1 = [7];
-assertArraysEqual(middle(array1), check1)
+assertArraysEqual(middle(array1), check1);

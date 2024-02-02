@@ -1,3 +1,5 @@
+// This function will flatten any arrays by one level. Arrays one level deep will enter the larger array, and Arrays in two or more levels deep will decrease by one. [[]] --> []
+
 const eqArrays = function(actual, expected) {
   if (actual.length !== expected.length) {
     return false;
@@ -33,6 +35,6 @@ const flatten = function(array) {
   return flattenedArray;
 };
 
-let johtoLegendaries = ["Ho-oh", "Lugia", ["Entei", "Raikou", ["Suicune"]], "Celebi"]
+let johtoLegendaries = ["Ho-oh", "Lugia", ["Entei", "Raikou", ["Suicune"]], "Celebi"];
 console.log(flatten(johtoLegendaries));
-assertArraysEqual(flatten(johtoLegendaries), ["Ho-oh", "Lugia", "Entei", "Raikou", ["Suicune"], "Celebi"])
+assertArraysEqual(flatten(johtoLegendaries), ["Ho-oh", "Lugia", "Entei", "Raikou", ["Suicune"], "Celebi"]);

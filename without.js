@@ -1,3 +1,5 @@
+// This function will remove a value from an array.
+
 const eqArrays = function(array1, array2) {
   if (array1.length !== array2.length) {
     return false;
@@ -29,6 +31,6 @@ const without = function(array, itemsToRemove) {
 
   return newArray;
 };
-words = ["hello", "world", "lighthouse"]
+let words = ["hello", "world", "lighthouse"];
 assertArraysEqual(without(words, ["lighthouse"]), ["hello", "world"]);
 assertArraysEqual(without([1, 2, 3], [1]), [2, 3]);

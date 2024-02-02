@@ -1,3 +1,5 @@
+// This function will compare two arrays to see if they match. It will then compare whether the arrays match with true or false, written by the coder.
+
 const assertEqual = function(actual, expected) {
   if (actual === expected) {
     console.log(`🤑🤑🤑 Assertion Passed: ${actual} and ${expected} are equal`);
@@ -21,6 +23,6 @@ const eqArrays = function(actual, expected) {
 };
 
 assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true);
-assertEqual(eqArrays(["cat", "dog", "frog"], ["cat", "dog", "eagle" ]), false); 
-assertEqual(eqArrays(["yeah"], []), false); 
-assertEqual(eqArrays([], [],), true); 
+assertEqual(eqArrays(["cat", "dog", "frog"], ["cat", "dog", "eagle" ]), false);
+assertEqual(eqArrays(["yeah"], []), false);
+assertEqual(eqArrays([], [],), true);

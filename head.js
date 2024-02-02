@@ -1,3 +1,5 @@
+//This function will take the first value of an array.
+
 const assertEqual = function(actual, expected) {
   if (actual === expected) {
     console.log(`🤑🤑🤑 Assertion Passed: ${actual} === ${expected}`);
