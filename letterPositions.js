@@ -1,4 +1,20 @@
-// This function comapres two different arrays to see if they match.
+const letterPositions = function(sentence) {
+  let characters = {};
+
+  for (let i = 0; i < sentence.length; i++) {
+    const letter = sentence[i].toLowerCase();
+    if (/[a-z]/.test(letter)) {
+      if (characters[letter]) {
+        characters[letter].push(i);
+      } else {
+        characters[letter] = [i];
+      }
+    }
+  }
+  return characters;
+};
+
+
 const eqArrays = function(actual, expected) {
   if (actual.length !== expected.length) {
     return false;
@@ -12,6 +28,7 @@ const eqArrays = function(actual, expected) {
 
   return true;
 };
+
 const assertArraysEqual = function(actual, expected) {
   if (eqArrays(actual, expected)) {
     console.log(`🤑🤑🤑 Assertion Passed: [${actual}] and [${expected}] are equal`);
@@ -20,5 +37,5 @@ const assertArraysEqual = function(actual, expected) {
   }
 };
 
-assertArraysEqual([1, 2, 3], [1, 2, 3]);
-assertArraysEqual(["cat", "dog", "frog"], ["cat", "dog", "eagle" ]);
+
+assertArraysEqual(letterPositions("hello"), {h: [0], e: [ 1 ], l: [ 2, 3 ], o: [ 4 ]});
