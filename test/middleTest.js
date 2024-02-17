@@ -1,6 +1,6 @@
 const assertArraysEqual = require('../assertArraysEqual')
-const eqArrays = require('../eqArrays')
 const middle = require('../middle')
+
 
 let array1 = [3, 5, 7, 9, 11];
 let array2 = [3];
@@ -11,3 +11,9 @@ console.log(middle(array3));
 
 let check1 = [7];
 assertArraysEqual(middle(array1), check1);
+
+let check2 = [];
+assertArraysEqual(middle(array2), check2);
+
+let check3 = ([4, 6])
+assertArraysEqual(middle(array3), check3)
