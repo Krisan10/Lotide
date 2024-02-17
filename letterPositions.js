@@ -1,41 +1,19 @@
+// This code is for telling us which position each letter is in a word.
+
 const letterPositions = function(sentence) {
   let characters = {};
 
-  for (let i = 0; i < sentence.length; i++) {
-    const letter = sentence[i].toLowerCase();
-    if (/[a-z]/.test(letter)) {
+  for (let i = 0; i < sentence.length; i++) {// For loop to iterate over each letter
+    const letter = sentence[i].toLowerCase(); //This line converts every letter in the string into lowercase
+    if (/[a-z]/.test(letter)) { //This line checks if the letter is a letter
       if (characters[letter]) {
-        characters[letter].push(i);
+        characters[letter].push(i); //This line pushes a letter into the letter's object
       } else {
-        characters[letter] = [i];
+        characters[letter] = [i]; //This line is for when there is only one letter in the string
       }
     }
   }
   return characters;
 };
 
-
-const eqArrays = function(actual, expected) {
-  if (actual.length !== expected.length) {
-    return false;
-  }
-
-  for (let i = 0; i < actual.length; i++) {
-    if (actual[i] !== expected[i]) {
-      return false;
-    }
-  }
-
-  return true;
-};
-
-const assertArraysEqual = function(actual, expected) {
-  if (eqArrays(actual, expected)) {
-    console.log(`🤑🤑🤑 Assertion Passed: [${actual}] and [${expected}] are equal`);
-  } else {
-    console.log(`😂😂😂 Assertion Failed: [${actual}] and [${expected}] are not equal`);
-  }
-};
-
-
-assertArraysEqual(letterPositions("hello"), {h: [0], e: [ 1 ], l: [ 2, 3 ], o: [ 4 ]});
+module.exports = letterPositions

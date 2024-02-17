@@ -1,5 +1,4 @@
 const countOnly = require('../countOnly')
-const assertEqual = require('../assertEqual')
 const assert = require('chai').assert;
 
 describe("#countOnly", () => {
