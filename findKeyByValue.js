@@ -1,27 +1,15 @@
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`🤑🤑🤑 Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`😂😂😂 Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
+//This code allows you to find the key of an object when presented with a value
 
-const findKeyByValue = function(keys, values) {
-  let keysArray = Object.keys(keys);
-  for (const key of keysArray) {
-    if (keys[key] === values) {
-      return key;
+const findKeyByValue = function(objects, values) { //This line takes two parameters, the object and the value used to find the key
+
+  let objectsArray = Object.keys(objects); //This line is create a variable for the objects of the object
+
+  for (const obj of objectsArray) { //This line loops over the objects in the object
+    if (objects[obj] === values) { //This conditional for if the value being searched is connected to the key. If yes it returns the key.
+      return obj;
     }
   }
   return undefined;
 };
 
-const bestTVShowsByGenre = {
-  sci_fi: "The Expanse",
-  comedy: "Brooklyn Nine-Nine",
-  drama:  "The Wire"
-};
-
-assertEqual(findKeyByValue(bestTVShowsByGenre, "The Wire"), "drama");
-assertEqual(findKeyByValue(bestTVShowsByGenre, "That '70s Show"), undefined);
-console.log(findKeyByValue(bestTVShowsByGenre, "The Expanse"));
+module.exports = findKeyByValue;
