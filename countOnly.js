@@ -1,22 +1,15 @@
-//This function will comapre an array and an object to see if the value is repeated and by how many times.
+//This function will take in an array and filter it through the object of items to count.
+const countOnly = function(allItems, itemsToCount) {// This line takes two parameters. allItems = the array, itemsToCount = object of which items to count
 
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`🤑🤑🤑 Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`😂😂😂 Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
+  const results = {}; // This line puts the results into an array
 
-const countOnly = function(allItems, itemsToCount) {
-  const results = {};
-
-  for (const item of allItems) {
+  for (const item of allItems) { //This line iterates each item through the allItems array
+  // checks if the items are to be counted
     if (itemsToCount[item]) {
-      if (results[item]) {
+      if (results[item]) { //if item is already in the results, add one more.
         results[item] += 1;
       } else {
-        results[item] = 1;
+        results[item] = 1; //if item is only counted once, return one
       }
     }
   }
@@ -24,21 +17,4 @@ const countOnly = function(allItems, itemsToCount) {
   return results;
 };
 
-const firstNames = [
-  "Karl",
-  "Salima",
-  "Agouhanna",
-  "Fang",
-  "Kavith",
-  "Jason",
-  "Salima",
-  "Fang",
-  "Joe"
-];
-
-const result1 = countOnly(firstNames, { "Jason": true, "Karima": true, "Fang": true, "Agouhanna": false });
-
-assertEqual(result1["Jason"], 1);
-assertEqual(result1["Karima"], undefined);
-assertEqual(result1["Fang"], 2);
-assertEqual(result1["Agouhanna"], undefined);
+module.exports = countOnly;

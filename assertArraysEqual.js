@@ -1,5 +1,5 @@
 // This function comapres two different arrays to see if they match.
-const eqArrays = require('../eqArrays')
+const eqArrays = require('./eqArrays')
 
 const assertArraysEqual = function(actual, expected) {
   if (eqArrays(actual, expected)) {

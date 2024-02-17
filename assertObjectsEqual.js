@@ -1,4 +1,7 @@
 const inspect = require('util').inspect;
+const eqArrays = require('./eqArrays')
+const eqObjects = require('./eqObjects')
+
 const eqArrays = function(actual, expected) {
   if (actual.length !== expected.length) {
     return false;
@@ -48,10 +51,4 @@ const assertObjectsEqual = function(actual, expected) {
   }
 };
 
-const object1 = { a: 1, b: [2, 3], c: "hello" };
-const object2 = { a: 1, b: [2, 3], c: "hello" };
-const object3 = { a: 1, b: [2, 3, 4], c: "hello" };
-const object4 = { a: 1, b: [2, 3], c: "world" };
-assertObjectsEqual(object1, object2);
-assertObjectsEqual(object1, object3);
-assertObjectsEqual(object1, object4);
+module.exports = assertObjectsEqual; 
