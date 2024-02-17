@@ -1,7 +1,16 @@
-const assertEqual = require('../assertEqual');
+const assert = require('chai').assert;
 const eqArrays = require('../eqArrays')
 
-assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true);
-assertEqual(eqArrays(["cat", "dog", "frog"], ["cat", "dog", "eagle" ]), false);
-assertEqual(eqArrays(["yeah"], []), false);
-assertEqual(eqArrays([], []), true);
+describe("#eqArrays", () => {
+  it("returns true for ([], [])", () => {
+    assert.deepEqual(eqArrays([], []), true);
+  });
+
+  it("returns true for ([Treecko, Torchic, Mudkip], [Treecko, Torchic, Mudkip])", () => {
+    assert.deepEqual(eqArrays(["Treecko", "Torchic", "Mudkip"], ["Treecko", "Torchic", "Mudkip"]), true);
+  });
+
+  it("returns false for ([Snivy, Tepig, Oshawott], [Pansage, Pansear, Panpour])", () => {
+    assert.deepEqual(eqArrays(["Snivy", "Tepig", "Oshawott"], ["Pansage", "Pansear", "Panpour"]), false);
+  });  
+})
