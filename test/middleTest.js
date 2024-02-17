@@ -1,6 +1,8 @@
+const assert = require('chai').assert;
 const assertArraysEqual = require('../assertArraysEqual')
 const middle = require('../middle')
 
+de
 
 let array1 = [3, 5, 7, 9, 11];
 let array2 = [3];
