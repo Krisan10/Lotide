@@ -1,17 +1,6 @@
 // This function comapres two different arrays to see if they match.
-const eqArrays = function(actual, expected) {
-  if (actual.length !== expected.length) {
-    return false;
-  }
+const eqArrays = require('../eqArrays')
 
-  for (let i = 0; i < actual.length; i++) {
-    if (actual[i] !== expected[i]) {
-      return false;
-    }
-  }
-
-  return true;
-};
 const assertArraysEqual = function(actual, expected) {
   if (eqArrays(actual, expected)) {
     console.log(`🤑🤑🤑 Assertion Passed: [${actual}] and [${expected}] are equal`);
@@ -20,5 +9,4 @@ const assertArraysEqual = function(actual, expected) {
   }
 };
 
-assertArraysEqual([1, 2, 3], [1, 2, 3]);
-assertArraysEqual(["cat", "dog", "frog"], ["cat", "dog", "eagle" ]);
+module.exports = assertArraysEqual;
