@@ -19,20 +19,3 @@ it("returns {} when not counting Trapinch for [Tropius, Absol, Linoone, Linoone,
 assert.deepEqual(countOnly(["Keckleon", "Tropius", "Linoone", "Absol", "Linoone"], {Trapinch: false}), {})
 })
 });
-
-
-const firstNames = [
-  "Karl",
-  "Salima",
-  "Agouhanna",
-  "Fang",
-  "Kavith",
-  "Jason",
-  "Salima",
-  "Fang",
-  "Joe"
-];
-
-const result1 = countOnly(firstNames, { "Jason": true, "Karima": true, "Fang": true, "Agouhanna": false });
-
-console.log(countOnly(firstNames, {Fang: false}))
