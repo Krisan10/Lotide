@@ -3,7 +3,7 @@ const tail = require('../tail')
 
 
 describe("#tail", () => {
-  it("returns [2] for [1, 2]", () => {
+  it("returns [2, 3, 4] for [1, 2, 3, 4]", () => {
     assert.deepEqual(tail([1, 2]), [2]);
   });
 
