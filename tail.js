@@ -1,26 +1,11 @@
 // This function will take everything but the beginning of the array.
 
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`🤑🤑🤑 Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`😂😂😂 Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
 const tail = function(array) {
-  if (array.length > 1) {
-    return array.slice(1);
+  if (array.length > 1) { // This line is a conditional for whether the array has more than one value.
+    return array.slice(1); // This line slices the first value (0) from the second value (1)
   } else {
-    return [];
+    return []; //This line returns any array with one or fewer values as []
   }
 };
 
-const words = ["Yo Yo", "Lighthouse", "Labs"];
-tail(words); // no need to capture the return value since we are not checking it
-assertEqual(words.length, 4); // original array should still have 3 elements!
-assertEqual(words.length, 3);
-
-const pokemon = ["Pikachu", "Rampardos", "Tsareena", "Flamigo"];
-tail(pokemon);
-assertEqual(pokemon.length, 4);
-assertEqual(pokemon.length, 9);
+module.exports = tail;
