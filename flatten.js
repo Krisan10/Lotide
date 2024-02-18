@@ -1,40 +1,17 @@
 // This function will flatten any arrays by one level. Arrays one level deep will enter the larger array, and Arrays in two or more levels deep will decrease by one. [[]] --> []
 
-const eqArrays = function(actual, expected) {
-  if (actual.length !== expected.length) {
-    return false;
-  }
-
-  for (let i = 0; i < actual.length; i++) {
-    if (actual[i] !== expected[i]) {
-      return false;
-    }
-  }
-
-  return true;
-};
-const assertArraysEqual = function(actual, expected) {
-  if (eqArrays(actual, expected)) {
-    console.log(`🤑🤑🤑 Assertion Passed: [${actual}] and [${expected}] are equal`);
-  } else {
-    console.log(`😂😂😂 Assertion Failed: [${actual}] and [${expected}] are not equal`);
-  }
-};
-
 const flatten = function(array) {
   let flattenedArray = [];
 
   for (let i = 0; i < array.length; i++) {
-    if (Array.isArray(array[i])) {
-      flattenedArray = flattenedArray.concat(array[i]);
+    if (Array.isArray(array[i])) {//This line checks if the array contains any arrays
+      flattenedArray = flattenedArray.concat(array[i]); //This line reduces the array by one level
     } else {
-      flattenedArray.push(array[i]);
+      flattenedArray.push(array[i]);//This line is for items that are not in a nested array.
     }
   }
 
   return flattenedArray;
 };
 
-let johtoLegendaries = ["Ho-oh", "Lugia", ["Entei", "Raikou", ["Suicune"]], "Celebi"];
-console.log(flatten(johtoLegendaries));
-assertArraysEqual(flatten(johtoLegendaries), ["Ho-oh", "Lugia", "Entei", "Raikou", ["Suicune"], "Celebi"]);
+module.exports = flatten;

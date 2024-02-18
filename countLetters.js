@@ -7,17 +7,15 @@ const countLetters = function(sentence) {
   let characters = {};
 
   for (const letter of sentence) {
-    if (/[a-zA-Z]/.test(letter)) {
-      let lowerChar = letter.toLowerCase();
+    if (/[a-zA-Z]/.test(letter)) { //This line checks if the array contains strings
+      let lowerChar = letter.toLowerCase(); // This line changes all letters to lowercase
 
       if (characters[lowerChar]) {
-        characters[lowerChar]++;
+        characters[lowerChar]++; //This checks if the letter is already in an object and if it is, add one.
       } else {
-        characters[lowerChar] = 1;
+        characters[lowerChar] = 1; //if the letter is the only one in the array, it returns 1
       }
     }
   }
   return characters;
 };
-
-console.log(countLetters("I choose you Torterra!"));

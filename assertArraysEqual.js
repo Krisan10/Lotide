@@ -1,7 +1,6 @@
-// This function comapres two different arrays to see if they match.
-const eqArrays = require('./eqArrays')
+// This code asserts whether two arrays are identical.
 
-const assertArraysEqual = function(actual, expected) {
+const assertArraysEqual = function(actual, expected) { //This line takes two arrays
   if (eqArrays(actual, expected)) {
     console.log(`🤑🤑🤑 Assertion Passed: [${actual}] and [${expected}] are equal`);
   } else {

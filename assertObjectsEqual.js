@@ -1,6 +1,4 @@
-const inspect = require('util').inspect;
-const eqArrays = require('./eqArrays')
-const eqObjects = require('./eqObjects')
+//This code is an assertion tool to see if two objects are identical
 
 const assertObjectsEqual = function(actual, expected) {
   if (eqObjects(actual, expected)) {
