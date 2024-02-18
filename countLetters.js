@@ -19,3 +19,5 @@ const countLetters = function(sentence) {
   }
   return characters;
 };
+
+module.exports = countLetters;

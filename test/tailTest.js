@@ -3,15 +3,15 @@ const tail = require('../tail')
 
 
 describe("#tail", () => {
-  it("returns [2, 3, 4] for [1, 2, 3, 4]", () => {
+  it("returns all items except for the first", () => {
     assert.deepEqual(tail([1, 2, 3, 4]), [2, 3, 4]);
   });
 
-  it("returns [] for [1]", () => {
+  it("returns an empty array if the array has one item", () => {
     assert.deepEqual(tail([1]), []);
   });
 
-  it("returns [] for []", () => {
+  it("returns an empty array if the array is empty", () => {
     assert.deepEqual(tail([]), [])
   })
 }); 

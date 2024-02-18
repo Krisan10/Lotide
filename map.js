@@ -1,17 +1,11 @@
-const words = ["doll", "penguin", "desk", "remote", "zelda"];
+//This code takes an array and implements the callback to each item of the array 
 
 const map = function(array, callback) {
   const results = [];
-  for (let item of array) {
-    results.push(callback(item));
+  for (let item of array) { //iterate through each item of the array
+    results.push(callback(item));// apply the callback to the item, then push it to the results variable
   }
   return results;
 }
- const grassStarters = ["treeko", "bulbasaur", "snivy", "rowlett"]
- const numbers = ["1", "5", "76", "405", "302223"]
- const pokemon = map(grassStarters, starter => starter[0])
- const digits = map(numbers, numb => numb[0])
-const results1 = map(words, word => word[0]);
-console.log(assertArraysEqual(results1, ["d","p","d","r","z"]));
-console.log(assertArraysEqual(pokemon, ["t","b","s","r"]));
-console.log(assertArraysEqual(digits, [1, 5, 7, 4, 3]));
+
+module.exports = map;

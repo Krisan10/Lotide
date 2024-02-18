@@ -2,19 +2,19 @@ const countOnly = require('../countOnly')
 const assert = require('chai').assert;
 
 describe("#countOnly", () => {
-  it("returns 2 when counting Metagross for [Lopunny, Slaking, Honchkrow, Metagross, Metagross, Florges]", () => {
+  it("returns a number according to the itemsToCount parameter", () => {
     assert.deepEqual(countOnly(["Metagross", "Slaking", "Clefairy", "Metagross", "Rhyperior"], {Metagross: true}), {Metagross: 2});
   });
 
-  it("returns {} when not counting Graveler for [Golurk, Golduck, Goldeen, Gravler, Gholdengo, Graveler", () => {
+  it("returns {} not counting an item", () => {
     assert.deepEqual(countOnly (["Golurk", "Golduck", "Graveler", "Gholdengo", "Graveler"], {Graveler: false}), {})
   });
 
-it("returns {} when counting Wurmple for [Geodude, Zubat, Aron, Makuhita]", () => {
+it("returns {} when the item being counted does not exist in the array", () => {
   assert.deepEqual(countOnly(["Geodude","Zubat", "Aron", "Makuhita", "Zubat"], {Wurmple: true}), {})
 })
 
-it("returns {} when not counting Trapinch for [Tropius, Absol, Linoone, Linoone, Keckleon]", () => {
+it("returns {} when not counting an item that does not exist", () => {
 assert.deepEqual(countOnly(["Keckleon", "Tropius", "Linoone", "Absol", "Linoone"], {Trapinch: false}), {})
 })
 });
